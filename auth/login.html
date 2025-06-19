@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - DreamHomes</title>
+  <link rel="stylesheet" href="../styles/style.css" />
+</head>
+<body>
+
+  <!-- 🌟 Top Navigation Banner -->
+  <nav class="top-nav">
+    <div class="logo">DreamHomes</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Service</a></li>
+      <li><a href="#">Property</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="auth-buttons">
+      <a href="login.html" class="auth-btn">Login</a>
+      <a href="register.html" class="auth-btn">Register</a>
+      <a href="../add-property.html" class="add-listing-btn">Add Listing</a>
+    </div>
+  </nav>
+
+  <!-- 🔐 Login Form -->
+  <main class="form-wrapper">
+    <form id="login-form" class="property-form">
+      <h2>Login to DreamHomes</h2>
+      <label>Email: <input type="email" id="login-email" required /></label>
+      <label>Password: <input type="password" id="login-password" required /></label>
+      <button type="submit" class="submit-btn">Login</button>
+    </form>
+  </main>
+
+  <script src="../scripts/login.js"></script>
+</body>
+</html>

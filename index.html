@@ -2,23 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Real Estate Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DreamHomes - Home</title>
   <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
-  <header>
-    <h1>🏠 Real Estate Listings</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="listings.html">View Listings</a>
-      <a href="add-property.html">Add Property</a>
-    </nav>
+
+  <div id="user-info" class="user-info"></div>
+
+
+  <!-- 🌟 Top Navigation Banner -->
+  <nav class="top-nav">
+    <div class="logo">DreamHomes</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Service</a></li>
+      <li><a href="#">Property</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    
+    <!-- 🔐 Auth Buttons -->
+    <div class="auth-buttons" id="auth-buttons">
+  <a href="auth/login.html" class="auth-btn">Login</a>
+  <a href="auth/register.html" class="auth-btn">Register</a>
+  <a href="add-property.html" class="add-listing-btn">Add Listing</a>
+</div>
+
+<div class="logout-button" id="logout-section" style="display: none;">
+  <button id="logout-btn" class="auth-btn">Logout</button>
+</div>
+
+  </nav>
+
+  <!-- 🏡 Hero Banner -->
+  <header class="banner">
+    <h1>Find Your Dream Home</h1>
+    <h3>Stay-ready homes for you to live in, browse and sell!</h3>
   </header>
 
-  <main>
-    <h2>Welcome to Our Real Estate Platform</h2>
-    <p>Browse and add real estate listings easily!</p>
+  <!-- 📍 Call-to-Action -->
+  <main class="intro">
+    <section class="welcome-section" id="welcome-section" style="display: none;">
+  <h2 id="welcome-msg"></h2>
+  <p id="role-msg"></p>
+</section>
+
+    <p>Explore the best properties tailored to your needs.</p>
+    <a href="listings.html" class="btn">View Listings</a>
+    <a href="add-property.html" class="btn">Add Property</a>
   </main>
+
+  <script src="scripts/main.js"></script>
 </body>
 </html>

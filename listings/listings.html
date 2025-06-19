@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Property Listings</title>
+  <link rel="stylesheet" href="../styles/listings.css">
+</head>
+<body>
+  <header class="navbar">
+    <h1 class="logo">DreamHomes</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Property</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="add-property.html" class="add-btn">Add Listing</a>
+  </header>
+
+  <section class="listings-header">
+    <h2>All Property Listings</h2>
+    <div class="filters">
+      <!-- ✅ ADD THIS ID -->
+      <input type="text" id="search-input" placeholder="Search by title or location" />
+
+      <!-- ✅ Already has correct ID -->
+      <select id="price-filter">
+        <option value="">Sort by Price</option>
+        <option value="low-to-high">Low to High</option>
+        <option value="high-to-low">High to Low</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- ✅ ADD THIS ID to match JS expectation -->
+  <section class="listings-container" id="listings-container">
+    <div class="property-card">
+      <img src="../assets/images/house2.jpg" alt="Modern Family Home"/>
+      <div class="card-content">
+        <h3>Modern Family Home</h3>
+        <p>Location: New York, NY</p>
+        <p>Price: $850000</p>
+        <p>Bedrooms: 4 | Bathrooms: 3</p>
+      </div>
+    </div>
+    <div class="property-card">
+      <img src="../assets/images/house3.jpg" alt="Elegant Mansion"/>
+      <div class="card-content">
+        <h3>Elegant Mansion</h3>
+        <p>Location: Beverly Hills, CA</p>
+        <p>Price: $3200000</p>
+        <p>Bedrooms: 6 | Bathrooms: 5</p>
+      </div>
+    </div>
+    <div class="property-card">
+      <img src="../assets/images/house5.jpg" alt="Cozy Suburban House"/>
+      <div class="card-content">
+        <h3>Cozy Suburban House</h3>
+        <p>Location: Austin, TX</p>
+        <p>Price: $420000</p>
+        <p>Bedrooms: 3 | Bathrooms: 2</p>
+      </div>
+    </div>
+    <div class="property-card">
+      <img src="../assets/images/house6.jpg" alt="Luxury Lakeview Villa"/>
+      <div class="card-content">
+        <h3>Luxury Lakeview Villa</h3>
+        <p>Location: Lake Tahoe, NV</p>
+        <p>Price: $1750000</p>
+        <p>Bedrooms: 5 | Bathrooms: 4</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

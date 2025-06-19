@@ -1,26 +1,549 @@
 body {
   font-family: Arial, sans-serif;
-  padding: 20px;
-  background: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+  background-color: #1e1e1e;
+  color: #eee;
 }
 
 header {
-  background: #333;
+  padding: 1em;
+  background-color: #153c57;
   color: white;
-  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner {
+  background: url('../assets/images/house1.jpg') center/cover no-repeat;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+}
+
+.intro {
   text-align: center;
+  padding: 2em;
 }
 
-nav a {
+.btn {
+  margin: 0.5em;
+  padding: 0.7em 1.5em;
+  background: #153c57;
   color: white;
-  margin: 0 10px;
   text-decoration: none;
+  border-radius: 5px;
 }
 
-.property {
+.controls {
+  display: flex;
+  gap: 1em;
+  padding: 1em;
+  justify-content: center;
+}
+
+.listings {
+  display: grid;
+  gap: 1em;
+  padding: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.listing-card {
   background: white;
-  border: 1px solid #ccc;
-  margin-bottom: 20px;
-  padding: 15px;
   border-radius: 10px;
+  padding: 1em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.listing-card:hover {
+  transform: translateY(-5px);
+}
+
+.listing-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.property-form {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  max-width: 600px;
+  margin: auto;
+  gap: 1em;
+}
+
+.property-form input, .property-form textarea {
+  padding: 0.7em;
+  font-size: 1em;
+}
+
+.property-form button {
+  padding: 0.7em;
+  background: #b77866;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+
+/* GENERAL STYLES */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme {
+  background-color: #1e2a38;
+  color: #ffffff;
+}
+
+body.light-theme {
+  background-color: #f4f4f4;
+  color: #222222;
+}
+
+/* HEADER/BANNER */
+.banner {
+  position: relative;
+  background: url('../assets/images/house1.jpg') center/cover no-repeat;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.banner .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(30, 42, 56, 0.6); /* translucent dark overlay */
+  z-index: 1;
+}
+
+.banner h1 {
+  font-size: 3rem;
+  z-index: 2;
+  margin: 0;
+}
+
+/* TOGGLE BUTTON */
+
+/* MAIN CONTENT */
+.intro {
+  text-align: center;
+  padding: 2rem;
+}
+
+.btn {
+  text-decoration: none;
+  margin: 10px;
+  padding: 12px 20px;
+  background-color: #1a3f65;
+  color: white;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #1a3f65;
+}
+
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Top Navbar */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0c2d48;
+  padding: 1rem 2rem;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffd369;
+}
+
+.add-listing-btn {
+  background-color: #c9c691;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.add-listing-btn:hover {
+  background-color: #a5995a;
+}
+
+/* Banner */
+.banner {
+  background: linear-gradient(
+      rgba(12, 45, 72, 0.7), 
+      rgba(12, 45, 72, 0.7)
+    ),
+    url('../assets/images/house1.jpg') center/cover no-repeat;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.banner h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+/* Intro Section */
+.intro {
+  padding: 3rem;
+  text-align: center;
+  background-color: #f3f4f6;
+}
+
+.intro p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.btn {
+  background-color: #325b87;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  margin: 0 0.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #143252;
+}
+
+
+
+
+
+
+
+
+/* Background image for the whole page */
+/* Apply background ONLY on the Add Property page */
+body.add-property-page {
+  background: url('../assets/images/house7.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+
+
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header style remains intact */
+.simple-header {
+  background-color: rgba(11, 31, 56, 0.8);
+  text-align: center;
+  padding: 40px 20px;
+  color: #fff;
+}
+
+/* Wrapper to center the form */
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+/* Stylish translucent form container */
+.property-form {
+  background: rgba(255, 255, 255, 0.15); /* translucent */
+  backdrop-filter: blur(8px);           /* glass effect */
+  padding: 30px 40px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgb(84, 31, 31);
+}
+
+/* Label and input styling */
+.property-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+/* Input fields */
+.property-form input {
+  padding: 10px 14px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+/* Focused input field style */
+.property-form input:focus {
+  border-color: #007bff;
+}
+
+/* Submit button */
+.submit-btn {
+  background-color: #c57c6f;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.submit-btn:hover {
+  background-color: #824134;
+}
+
+
+
+.listings-header {
+  text-align: center;
+  margin-top: 2rem;
+  color: #1c2c4c;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.controls input,
+.controls select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+.auth-buttons {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.auth-btn {
+  color: rgb(238, 226, 226);
+  background-color: #2b3a55;
+  padding: 0.4rem 0.8rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.auth-btn:hover {
+  background-color: #3d4f72;
+}
+
+
+.welcome-banner {
+  background: linear-gradient(to right, #0c2d48, #0c2d48);
+  color: #333;
+  text-align: center;
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 0 0 8px 8px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+
+
+
+.site-header {
+  background-color: #0d2c45;
+  color: white;
+  padding: 1em 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-section {
+  padding: 2em;
+  background-color: #f9f9f9;
+  margin: 2em;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.auth-btn {
+  padding: 0.6em 1.2em;
+  background-color: #bdb76b;
+  color: #f4eeee;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 1em;
+}
+
+
+
+
+/* Top Navbar Styling */
+.top-navbar {
+  background-color: #0e3c59;
+  color: rgb(247, 243, 243);
+  padding: 1rem 2rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+/* Push form slightly below the navbar */
+form {
+  margin-top: 2rem;
+}
+
+
+/* Ensure navbar is fixed and clean */
+.top-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0e3c59;
+  color: rgb(249, 247, 247);
+  padding: 1rem 2rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Add spacing below fixed navbar */
+.form-wrapper {
+  padding: 100px 20px 60px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Make the form beautiful */
+.property-form {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  padding: 30px 40px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #503636;
+}
+
+/* Input and labels */
+.property-form label {
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  color: rgb(67, 43, 43);
+}
+
+.property-form input {
+  padding: 10px 14px;
+  margin-top: 6px;
+  border: 1px solid #5e4141;
+  border-radius: 8px;
+  outline: none;
+}
+
+/* Button style */
+.submit-btn {
+  background-color: #c57c6f;
+  color: rgb(252, 249, 249);
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #824134;
+}
+
+/* Background for add property page only */
+body.add-property-page {
+  background: url('../assets/images/house7.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
 }

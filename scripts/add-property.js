@@ -1,20 +1,22 @@
-const form = document.getElementById("property-form");
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("add-property-form");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-  const newProperty = {
-    title: document.getElementById("title").value,
-    location: document.getElementById("location").value,
-    price: document.getElementById("price").value,
-    bedrooms: document.getElementById("bedrooms").value,
-    image: document.getElementById("image").value,
-  };
+    const title = document.getElementById("title").value;
+    const location = document.getElementById("location").value;
+    const price = parseFloat(document.getElementById("price").value);
+    const imageUrl = document.getElementById("imageUrl").value;
+    const description = document.getElementById("description").value;
 
-  const properties = JSON.parse(localStorage.getItem("properties")) || [];
-  properties.push(newProperty);
-  localStorage.setItem("properties", JSON.stringify(properties));
+    const listing = { title, location, price, imageUrl, description };
 
-  alert("Property added!");
-  form.reset();
+    const existingListings = JSON.parse(localStorage.getItem("propertyListings")) || [];
+    existingListings.push(listing);
+    localStorage.setItem("propertyListings", JSON.stringify(existingListings));
+
+    alert("Listing added successfully!");
+    window.location.href = "listings.html";
+  });
 });
