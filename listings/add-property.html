@@ -7,38 +7,34 @@
   <link rel="stylesheet" href="../styles/style.css" />
 </head>
 <body class="add-property-page">
+  <nav class="top-navbar">DreamHomes</nav>
 
-  <!-- ✅ Top Navbar -->
-  <nav class="top-navbar">
-    DreamHomes
-  </nav>
-
-  <!-- ✅ Form Wrapper -->
   <div class="form-wrapper">
-    <form class="property-form">
+    <form class="property-form" id="add-property-form">
       <label>
         Property Title
-        <input type="text" required />
+        <input type="text" id="title" required />
       </label>
       <label>
         Description
-        <input type="text" required />
+        <input type="text" id="description" required />
       </label>
       <label>
         Price
-        <input type="number" required />
+        <input type="number" id="price" required />
       </label>
       <label>
         Location
-        <input type="text" required />
+        <input type="text" id="location" required />
       </label>
       <label>
-        Image URL
-        <input type="url" />
+        Image Filename (e.g., house8.jpg)
+        <input type="text" id="imageUrl" required />
       </label>
       <button type="submit" class="submit-btn">Add Property</button>
     </form>
   </div>
 
+  <script src="../scripts/add-property.js"></script>
 </body>
 </html>

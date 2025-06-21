@@ -547,3 +547,49 @@ body.add-property-page {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
 }
+
+/* 🌙 Footer Styling */
+.site-footer {
+  background-color: #1c1e26;
+  color: #dcdcdc;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.footer-links {
+  margin-top: 1rem;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: #bbb;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: #777;
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+}

@@ -12,21 +12,23 @@ document.getElementById("login-form").addEventListener("submit", function (e) {
     return;
   }
 
-  // Save logged in user
+  // Save logged-in user
   localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
 
   alert(`Welcome back, ${foundUser.name}!`);
-  switch (user.role) {
-  case "Buyer":
+
+  // FIXED: Using foundUser.role instead of undefined 'user'
+  switch (foundUser.role) {
+  case "buyer":
     window.location.href = "../dashboards/buyer.html";
     break;
-  case "Seller":
+  case "seller":
     window.location.href = "../dashboards/seller.html";
     break;
-  case "Agent":
+  case "agent":
     window.location.href = "../dashboards/agent.html";
     break;
-  case "Admin":
+  case "admin":
     window.location.href = "../dashboards/admin.html";
     break;
   default:

@@ -1,19 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
   const user = JSON.parse(localStorage.getItem("loggedInUser"));
 
-  // Redirect to login if user is not authenticated
+  // 🔐 Redirect to login if user is not authenticated
   if (!user) {
     window.location.href = "../auth/login.html";
     return;
   }
 
-  // Populate dashboard user info if elements exist
+  // 👤 Populate user info if the elements exist
   const roleElement = document.getElementById("user-role");
   const nameElement = document.getElementById("user-name");
   if (roleElement) roleElement.textContent = user.role;
   if (nameElement) nameElement.textContent = user.name;
 
-  // Logout functionality
+  // 🚪 Logout functionality: clear localStorage and redirect to homepage
   const logoutBtn = document.getElementById("logout-btn");
   if (logoutBtn) {
     logoutBtn.addEventListener("click", () => {
@@ -22,28 +22,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Optional role-based element hiding (e.g., hide Add Listing for Buyers)
+  // 🧭 Role-based display logic: Hide Add button for Buyer
   if (user.role === "Buyer") {
     const addBtn = document.getElementById("add-listing-btn");
     if (addBtn) addBtn.style.display = "none";
   }
+
+  // 📄 View Listings button event
+  const viewBtn = document.getElementById("view-listings-btn");
+  if (viewBtn) {
+    viewBtn.addEventListener("click", () => {
+      window.location.href = "../listings/listings.html";
+    });
+  }
+
+  // 🏠 Add Property button event
+  const addBtn = document.getElementById("add-listing-btn");
+  if (addBtn) {
+    addBtn.addEventListener("click", () => {
+      window.location.href = "../listings/add-property.html";
+    });
+  }
 });
-
-
-// Add event listener for "View Listings"
-const viewBtn = document.getElementById("view-listings-btn");
-if (viewBtn) {
-  viewBtn.addEventListener("click", () => {
-    window.location.href = "../listings.html";
-  });
-}
-
-// Add event listener for "Add Listing"
-const addBtn = document.getElementById("add-listing-btn");
-if (addBtn) {
-  addBtn.addEventListener("click", () => {
-    window.location.href = "../add-property.html";
-  });
-}
-
-

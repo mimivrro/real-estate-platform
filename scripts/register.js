@@ -21,7 +21,7 @@ document.getElementById("register-form").addEventListener("submit", function (e)
     return;
   }
 
-  const newUser = { name, email, password, role };
+  const newUser = { name, email, password, role: role.toLowerCase(),  };
   users.push(newUser);
   localStorage.setItem("users", JSON.stringify(users));
 

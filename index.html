@@ -10,30 +10,20 @@
 
   <div id="user-info" class="user-info"></div>
 
-
   <!-- 🌟 Top Navigation Banner -->
   <nav class="top-nav">
     <div class="logo">DreamHomes</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Service</a></li>
-      <li><a href="#">Property</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-    
+
     <!-- 🔐 Auth Buttons -->
     <div class="auth-buttons" id="auth-buttons">
-  <a href="auth/login.html" class="auth-btn">Login</a>
-  <a href="auth/register.html" class="auth-btn">Register</a>
-  <a href="add-property.html" class="add-listing-btn">Add Listing</a>
-</div>
+      <a href="auth/login.html" class="auth-btn">Login</a>
+      <a href="auth/register.html" class="auth-btn">Register</a>
+      
+    </div>
 
-<div class="logout-button" id="logout-section" style="display: none;">
-  <button id="logout-btn" class="auth-btn">Logout</button>
-</div>
-
+    <div class="logout-button" id="logout-section" style="display: none;">
+      <button id="logout-btn" class="auth-btn">Logout</button>
+    </div>
   </nav>
 
   <!-- 🏡 Hero Banner -->
@@ -45,15 +35,33 @@
   <!-- 📍 Call-to-Action -->
   <main class="intro">
     <section class="welcome-section" id="welcome-section" style="display: none;">
-  <h2 id="welcome-msg"></h2>
-  <p id="role-msg"></p>
-</section>
+      <h2 id="welcome-msg"></h2>
+      <p id="role-msg"></p>
+    </section>
 
     <p>Explore the best properties tailored to your needs.</p>
-    <a href="listings.html" class="btn">View Listings</a>
-    <a href="add-property.html" class="btn">Add Property</a>
+    <a href="listings/listings.html" class="btn">View Listings</a>
+    <a href="listings/add-property.html" class="btn">Add Property</a>
   </main>
 
   <script src="scripts/main.js"></script>
+
+
+  <!-- 🌙 DreamHomes Footer -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-logo">DreamHomes</div>
+    <p>Your trusted platform for finding and listing dream properties.</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Support</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 DreamHomes. All rights reserved.
+  </div>
+</footer>
+
 </body>
 </html>

@@ -7,8 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const title = document.getElementById("title").value;
     const location = document.getElementById("location").value;
     const price = parseFloat(document.getElementById("price").value);
-    const imageUrl = document.getElementById("imageUrl").value;
+    const imageFile = document.getElementById("imageUrl").value.trim();
     const description = document.getElementById("description").value;
+
+    const imageUrl = `../assets/images/${imageFile}`;
 
     const listing = { title, location, price, imageUrl, description };
 
@@ -17,6 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("propertyListings", JSON.stringify(existingListings));
 
     alert("Listing added successfully!");
-    window.location.href = "listings.html";
+    window.location.href = "../listings/listings.html";
   });
 });

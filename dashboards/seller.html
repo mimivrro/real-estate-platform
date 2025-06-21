@@ -3,20 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Buyer Dashboard</title>
+  <title>Seller Dashboard</title>
   <link rel="stylesheet" href="../styles/dashboard.css" />
 </head>
 <body>
   <header class="dashboard-header">
-    <h2>Buyer Dashboard</h2>
-    <button class="logout-btn" onclick="logout()">Logout</button>
+    <h2>Seller Dashboard</h2>
+    <!-- ✅ Proper ID for logout button -->
+    <button id="logout-btn" class="logout-btn">Logout</button>
   </header>
 
   <main class="dashboard-container">
     <section class="card-box">
-      <h3>Explore Properties</h3>
-      <p>Browse and save your favorite listings.</p>
-      <a href="../listings/listings.html" class="action-btn">View Listings</a>
+      <h3>Your Listings</h3>
+      <p>Manage your properties or add new ones.</p>
+      <div class="dashboard-buttons">
+        <!-- ✅ Proper IDs for event listeners -->
+        <button id="add-listing-btn" class="action-btn">Add New Listing</button>
+        <button id="view-listings-btn" class="action-btn">View All Listings</button>
+      </div>
     </section>
   </main>
 
