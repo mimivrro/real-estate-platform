@@ -7,12 +7,25 @@
   <link rel="stylesheet" href="../styles/listings.css">
 </head>
 <body>
+
+  <!-- ✅ Redirect if not logged in -->
+  <script>
+    const user = JSON.parse(localStorage.getItem("loggedInUser"));
+    if (!user) {
+      window.location.href = "../auth/register.html";
+    }
+  </script>
+
+  <!-- 🏠 Header restored to previous design -->
   <header class="navbar">
     <h1 class="logo">DreamHomes</h1>
-    <!-- Removed nav links like Home, About, Property, etc. -->
-
-    <!-- Only the Add Listing button remains -->
-    <a href="../listings/add-property.html" class="add-btn">Add Listing</a>
+    <!-- Only show Add Listing for non-Buyers -->
+    <script>
+      const role = JSON.parse(localStorage.getItem("loggedInUser"))?.role;
+      if (role && role !== "Buyer") {
+        document.write('<a href="../listings/add-property.html" class="add-btn">Add Listing</a>');
+      }
+    </script>
   </header>
 
   <section class="listings-header">
@@ -27,8 +40,8 @@
     </div>
   </section>
 
-  <section class="listings-container" id="listings-container">
-    <!-- Dynamic listings will be injected here -->
+  <section class="listings-grid listings-container" id="listings-container">
+    <!-- Property cards injected by listings.js -->
   </section>
 
   <script src="../scripts/listings.js"></script>

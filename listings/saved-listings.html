@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Saved Listings</title>
+  <link rel="stylesheet" href="../styles/listings.css">
+</head>
+<body>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem("loggedInUser"));
+    if (!user || user.role.toLowerCase() !== "buyer") {
+      window.location.href = "../auth/login.html";
+    }
+  </script>
+
+  <header class="navbar">
+    <h1 class="logo">Saved Properties</h1>
+    <a href="../dashboards/buyer.html" class="add-btn">Back to Dashboard</a>
+  </header>
+
+  <section class="listings-header">
+    <h2>Your Saved Properties</h2>
+  </section>
+
+  <section class="listings-grid" id="saved-listings-container">
+    <!-- Saved properties will go here -->
+  </section>
+
+  <script src="../scripts/saved-listings.js"></script>
+</body>
+</html>

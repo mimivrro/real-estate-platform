@@ -4,13 +4,16 @@ document.getElementById("register-form").addEventListener("submit", function (e)
   const name = document.getElementById("reg-name").value.trim();
   const email = document.getElementById("reg-email").value.trim();
   const password = document.getElementById("reg-password").value;
-  const role = document.getElementById("reg-role").value;
+  let role = document.getElementById("reg-role").value.trim();
 
   // Basic validation
   if (!name || !email || !password || !role) {
     alert("Please fill in all fields.");
     return;
   }
+
+  // Standardize role capitalization (e.g., buyer → Buyer)
+  role = role.charAt(0).toUpperCase() + role.slice(1).toLowerCase();
 
   // Check for existing users
   const users = JSON.parse(localStorage.getItem("users")) || [];
@@ -21,7 +24,8 @@ document.getElementById("register-form").addEventListener("submit", function (e)
     return;
   }
 
-  const newUser = { name, email, password, role: role.toLowerCase(),  };
+  const newUser = { name, email, password, role: role.toLowerCase() };
+
   users.push(newUser);
   localStorage.setItem("users", JSON.stringify(users));
 

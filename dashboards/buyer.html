@@ -15,11 +15,27 @@
   <main class="dashboard-container">
     <section class="card-box">
       <h3>Explore Properties</h3>
-      <p>Browse and save your favorite listings.</p>
-      <a href="../listings/listings.html" id="view-listings-btn" class="action-btn">View Listings</a>
+      <p>Browse listings and view your liked properties.</p>
+      <div class="dashboard-buttons">
+        <button id="view-listings-btn" class="action-btn">View Listings</button>
+        <button id="saved-listings-btn" class="action-btn">Saved Listings</button>
+      </div>
     </section>
   </main>
 
-  <script src="../scripts/dashboard.js"></script>
+  <script>
+    document.getElementById("view-listings-btn").addEventListener("click", () => {
+      window.location.href = "../listings/listings.html";
+    });
+
+    document.getElementById("saved-listings-btn").addEventListener("click", () => {
+      window.location.href = "../listings/saved-listings.html";
+    });
+
+    document.getElementById("logout-btn").addEventListener("click", () => {
+      localStorage.removeItem("loggedInUser");
+      window.location.href = "../index.html";
+    });
+  </script>
 </body>
 </html>

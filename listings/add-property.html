@@ -7,6 +7,15 @@
   <link rel="stylesheet" href="../styles/style.css" />
 </head>
 <body class="add-property-page">
+
+  <script>
+  const user = JSON.parse(localStorage.getItem("loggedInUser"));
+  if (!user) {
+    window.location.href = "../auth/register.html"; // or correct path
+  }
+</script>
+
+
   <nav class="top-navbar">DreamHomes</nav>
 
   <div class="form-wrapper">
@@ -28,9 +37,13 @@
         <input type="text" id="location" required />
       </label>
       <label>
-        Image Filename (e.g., house8.jpg)
-        <input type="text" id="imageUrl" required />
-      </label>
+<label for="property-image">Upload Image / PDF:</label>
+<div class="file-upload" id="drop-zone">
+  <p>Drag & Drop an image (JPG, JPEG, PNG) or PDF here<br>or click to select a file</p>
+  <input type="file" id="property-image" accept="image/*" />
+
+</div>
+
       <button type="submit" class="submit-btn">Add Property</button>
     </form>
   </div>
