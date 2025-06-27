@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const fileName = fileInput.files[0].name;
-    const imageUrl = `../assets/images/${fileName}`;
+    const imageUrl = `assets/images/${fileName}`; // ✅ Use path relative to /public
 
     const listing = {
       title,

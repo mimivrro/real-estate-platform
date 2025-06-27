@@ -6,9 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const user = JSON.parse(localStorage.getItem("loggedInUser"));
   const isBuyer = user && user.role.toLowerCase() === "buyer";
 
-  function getListings() {
-    return JSON.parse(localStorage.getItem("propertyListings")) || [];
-  }
+  let allListings = [];
 
   function getLikedListings() {
     if (!isBuyer) return [];
@@ -69,9 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".save-btn").forEach((btn) => {
         btn.addEventListener("click", (e) => {
           const index = parseInt(e.target.getAttribute("data-index"));
-          const allListings = getListings();
-          const listingToSave = allListings[index];
-
+          const listingToSave = listings[index];
           saveListing(listingToSave, e.target);
         });
       });
@@ -79,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function applyFilters() {
-    let filtered = getListings();
+    let filtered = [...allListings];
     const query = searchInput.value.toLowerCase();
 
     filtered = filtered.filter(l =>
@@ -101,6 +97,15 @@ document.addEventListener("DOMContentLoaded", () => {
   searchInput.addEventListener("input", applyFilters);
   sortSelect.addEventListener("change", applyFilters);
 
-  // Initial render
-  renderListings(getListings());
+  // Fetch listings from API
+  fetch("http://localhost:3000/api/listings")
+    .then(res => res.json())
+    .then(data => {
+      allListings = data;
+      renderListings(allListings);
+    })
+    .catch(err => {
+      console.error("Error fetching listings:", err);
+      listingsContainer.innerHTML = "<p>Error loading listings.</p>";
+    });
 });

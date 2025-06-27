@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Countryside Cottage",
+    "location": "Green Meadows",
+    "price": 180000,
+    "imageUrl": "../assets/images/house5.jpg",
+    "description": "Charming cottage surrounded by nature.",
+    "sellerEmail": "cottageowner@example.com"
+  },
+  {
+    "title": "Cozy Apartment",
+    "location": "Downtown",
+    "price": 120000,
+    "imageUrl": "../assets/images/house7.jpg",
+    "description": "A lovely 2-bedroom apartment.",
+    "sellerEmail": "seller@example.com"
+  },
+  {
+    "title": "Suburban Family Home",
+    "location": "Pleasantville",
+    "price": 250000,
+    "imageUrl": "../assets/images/house9.jpg",
+    "description": "Perfect 3-bedroom home with a big backyard.",
+    "sellerEmail": "familyrealtor@example.com"
+  },
+  {
+    "title": "Urban Loft",
+    "location": "San Francisco",
+    "price": 340000,
+    "imageUrl": "../assets/images/house10.jpg",
+    "description": "Stylish loft in the heart of the city.",
+    "sellerEmail": "urbanagent@example.com"
+  }
+]
