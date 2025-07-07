@@ -1,18 +1,31 @@
 const express = require("express");
 const router = express.Router();
-const { 
-  getAllListings, 
-  createListing, 
-  deleteListing 
-} = require("../controllers/listingController");
+const Listing = require("../models/Listing");
+const User = require("../models/User");
 
-// Get all listings
-router.get("/listings", getAllListings);
+// POST /api/listings - Add new listing
+router.post("/listings", async (req, res) => {
+  try {
+    const { title, price, location, imageUrl, description, sellerEmail } = req.body;
 
-// Create new listing
-router.post("/listings", createListing);
+    const seller = await User.findOne({ email: sellerEmail, role: "Seller" });
+    if (!seller) {
+      return res.status(404).json({ error: "Seller not found or not a seller role." });
+    }
 
-// Delete listing by ID
-router.delete("/listings/:id", deleteListing);
+    const listing = new Listing({
+      title,
+      price,
+      location,
+      imageUrl,
+      description,
+      seller: seller._id
+    });
 
-module.exports = router;
+    await listing.save();
+    res.status(201).json({ message: "Listing created", listing });
+  } catch (err) {
+    console.error("Error creating listing:", err);
+    res.status(500).json({ error: "Failed to create listing" });
+  }
+});

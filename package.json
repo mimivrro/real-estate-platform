@@ -12,7 +12,11 @@
     "type": "git",
     "url": "git+https://github.com/mimivrro/real-estate-platform.git"
   },
-  "keywords": ["real-estate", "api", "backend"],
+  "keywords": [
+    "real-estate",
+    "api",
+    "backend"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -22,6 +26,9 @@
   "dependencies": {
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
-    "express": "^4.19.2"
+    "dotenv": "^17.0.1",
+    "express": "^4.19.2",
+    "mongodb": "4.0",
+    "mongoose": "^8.16.1"
   }
 }
