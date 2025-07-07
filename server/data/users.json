@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1751883477413",
+    "name": "John Doe",
+    "email": "john@example.com",
+    "password": "password123",
+    "role": "seller",
+    "createdAt": "2025-07-07T10:17:57.413Z"
+  },
+  {
+    "id": "1751883530619",
+    "name": "mimi",
+    "email": "m@gmail.com",
+    "password": "12345",
+    "role": "buyer",
+    "createdAt": "2025-07-07T10:18:50.619Z"
+  }
+]
